@@ -17,7 +17,7 @@ body {
     padding: 20px;
 }
 
-.contaniner {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,6 +26,11 @@ body {
 /*canvas*/
 
 
+/*teclado*/
+.teclado-container {
+    padding: 5px;
+    
+}
 /*css do footer*/
 footer {
     display: flex;

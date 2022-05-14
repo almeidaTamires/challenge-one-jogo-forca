@@ -9,26 +9,48 @@
     <link rel="stylesheet" href="reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@200&family=Caveat&family=Merriweather:ital,wght@1,300&family=Montserrat:wght@300&family=Open+Sans:wght@300;400&family=Quicksand:wght@300&family=Raleway:wght@400;500;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="draw();">
+  <div id="escondeConteudo" style="display: none;">
     <div class="container hs" >
         <h1 id="jogoForca">Jogo da Forca</h1>
     <h2 id="digite">Digite uma letra e tente adivinhar a palavra!</h2>
     </div>
     
    
-  <canvas id="forca" width="700"  height="300" style="border: 1px solid #000;"></canvas>
-    <div class="container">
-        <button id="iniciarJogo" class="botoes">Iniciar jogo</button>
+  <canvas id="canvas" width="700"  height="300" style="border: 1px solid #000;"></canvas>
+   
+  
+
+  <div class="container-forca">
+    <div class="forca">
+      <div class="base"></div>
+      <div class="esquerda"></div>
+      <div class="topo"></div>
+      <div class="direita"></div>
     </div>
+
+    <div class="corpo">
+      <div class="cabeca" hidden="hidden"></div>
+      <div class="tronco" hidden="hidden"></div>
+      <div class="bracoDireito" hidden="hidden"></div>
+      <div class="bracoEsquerdo" hidden="hidden"></div>
+      <div class="pernaDireito" hidden="hidden"></div>
+      <div class="pernaEsquerdo" hidden="hidden"></div>
+    </div>
+  </div>
+
   <div class="container">
-      <textarea  id="novaPalavra"></textarea>
-      <button id="adicionarPalavra" class="botoes">Adicionar Palavra</button>
+    <textarea  id="novaPalavra"></textarea>
+    <button id="adicionarPalavra" class="botoes">Adicionar Palavra</button>
   </div>     
   
   <div class="botoes container">
-          <button id="comecarJogo">Começar a Jogar</button>
-          <button id="adicionarPalavra">Adicionar nova Palavra</button>
-        </div>
+    <button id="comecarJogo">Começar a Jogar</button>
+  </div>
+</div>
+<div class="container">
+  <button id="iniciarJogo" class="botoes" onclick="manipulaConteudo()">Iniciar jogo</button>
+</div>
 
     <footer><p class="copyright">&copy; Copyright Tamires Almeida - 2022</p>
     </footer>

@@ -13,4 +13,34 @@
 
 /*constants e variaeis para as palavras da forca*/ 
 const palavras = ["ovelha" , "camundongo", "computador", "amarelo", "elefante", "abacate"];
-const sorteiaPalavras = palavras[math.floor(math.random() * 6)];
+const palavraSecreta = palavras[math.floor(math.random() * 6)];
+const tentativas = 6;
+const desenhaTraco = palavraSecreta.length;
+
+function draw() {
+    var canvas = document.getElementById('canvas');/*pegar p canvas do html */
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(10,50);
+        ctx.lineTo(50,50);
+        ctx.closePath();
+        ctx.stroke();
+    }
+  }
+
+/*função para exibir conteudo após o click */
+function manipulaConteudo() {
+  var ativos = document.getElementById("iniciarJogo");
+  var expirados = document.getElementById("escondeConteudo");
+  if(document.getElementById("iniciarJogo").onclick)
+  {
+    expirados.style.display = "block";
+    ativos.style.display = "none";
+  }
+  else
+  {
+    ativos.style.display = "block";
+    expirados.style.display = "none";
+  }
+}
