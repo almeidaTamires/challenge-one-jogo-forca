@@ -17,40 +17,33 @@
     </div>
     
    
-  <canvas id="canvas" width="700"  height="300" style="border: 1px solid #000;"></canvas>
-   
+  <canvas id="canvas" width="700"  height="300" style="border: 1px solid #000;">
+    <div id="saida"></div>
+  </canvas>
   
 
-  <div class="container-forca">
-    <div class="forca">
-      <div class="base"></div>
-      <div class="esquerda"></div>
-      <div class="topo"></div>
-      <div class="direita"></div>
+  <section class="flex-container-2">
+    <img id="forca" src="images/forca.jpg" alt="Forca">
+
+    <div id="palavra" class="flex-container-2-2">
     </div>
 
-    <div class="corpo">
-      <div class="cabeca" hidden="hidden"></div>
-      <div class="tronco" hidden="hidden"></div>
-      <div class="bracoDireito" hidden="hidden"></div>
-      <div class="bracoEsquerdo" hidden="hidden"></div>
-      <div class="pernaDireito" hidden="hidden"></div>
-      <div class="pernaEsquerdo" hidden="hidden"></div>
-    </div>
+      <div id="novo">
+      </div>
+  </section>
+
+  <div id="letras" class="flex-container-3">   
   </div>
 
-  <div class="container">
-    <textarea  id="novaPalavra"></textarea>
-    <button id="adicionarPalavra" class="botoes">Adicionar Palavra</button>
-  </div>     
-  
-  <div class="botoes container">
-    <button id="comecarJogo">Começar a Jogar</button>
-  </div>
-</div>
-<div class="container">
-  <button id="iniciarJogo" class="botoes" onclick="manipulaConteudo()">Iniciar jogo</button>
-</div>
+    <div class="container">
+      <textarea  id="novaPalavra"></textarea>
+      <button id="adicionarPalavra" class="botoes">Adicionar Palavra</button>
+    </div>     
+      
+    </div>
+    <div class="container">
+      <button id="iniciarJogo" class="botoes" onclick="manipulaConteudo()">Iniciar jogo</button>
+    </div>
 
     <footer><p class="copyright">&copy; Copyright Tamires Almeida - 2022</p>
     </footer>

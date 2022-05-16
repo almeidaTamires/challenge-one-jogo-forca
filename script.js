@@ -12,22 +12,25 @@
 /*const procuraErro = ###.search(/[a-z||áàâãä-úùũûü||Çç]/);*/
 
 /*constants e variaeis para as palavras da forca*/ 
-const palavras = ["ovelha" , "camundongo", "computador", "amarelo", "elefante", "abacate"];
-const palavraSecreta = palavras[math.floor(math.random() * 6)];
-const tentativas = 6;
-const desenhaTraco = palavraSecreta.length;
+const palavras = ["ovelha" , "castelo", "corda", "amarelo", "elefante", "abacate"];
+const palavraSecreta = palavras[Math.floor(Math.random() * palavras.length)];
+const palavraUsuario = document.querySelector("#entrada").value;
+/*const btnEnviar = document.querySelector("#enviar"); btnEnviar.onclick = enviado;*/
 
-function draw() {
-    var canvas = document.getElementById('canvas');/*pegar p canvas do html */
-    if (canvas.getContext) {
-      var ctx = canvas.getContext('2d');
-        ctx.beginPath();
-        ctx.moveTo(10,50);
-        ctx.lineTo(50,50);
-        ctx.closePath();
-        ctx.stroke();
-    }
-  }
+/*
+desenhaPoste();
+desenhaApoio();
+desenhaBarraSuperior();
+desenhaTraco();
+mostra();
+enviado();*/
+
+mostra();
+/*função que sorteia a palavra */
+function mostra(){
+  console.log(palavraSecreta);
+}
+ 
 
 /*função para exibir conteudo após o click */
 function manipulaConteudo() {
@@ -44,3 +47,5 @@ function manipulaConteudo() {
     expirados.style.display = "none";
   }
 }
+
+

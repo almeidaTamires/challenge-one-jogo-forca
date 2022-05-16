@@ -24,7 +24,9 @@ body {
     align-items: center;
 }
 /*canvas*/
-
+#canvas {
+    display: flex;
+}
 
 /*teclado*/
 .teclado-container {
