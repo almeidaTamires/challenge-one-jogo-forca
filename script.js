@@ -9,22 +9,26 @@
 - As letras erradas devem aparecer na tela, mas não podem aparecer repetidamente;
 - As letras corretas devem ser mostradas na tela acima dos traços, nas posições corretas em relação à palavra.*/
 
-/*constantes e variaeis para as palavras da forca*/ 
+//constantes e variaeis para as palavras da forca
 let palavras = ["ABACATE", "OVELHA", "TESOURO", "LOGICA", "PANELA", "AFRICA", "FRONTEND", "PRAIA", "CHUVA", "CHOCOLATE", "ESTRELA", "VERMELHO", "BARCO", "ESPELHO"];
-let palavra = palavras[Math.floor(Math.random() * palavras.length)]; /*SORTEIA A PALAVRA DO ARRAY */
+let palavra = palavras[Math.floor(Math.random() * palavras.length)]; //SORTEIA A PALAVRA DO ARRAY
+let tela = document.getElementById("forca");
+let pincel = tela.getContext("2d");
+let chances = 6;
 /*const btnEnviar = document.querySelector("#enviar"); btnEnviar.onclick = enviado;*/
 
-/*
-desenhaPoste();
-desenhaApoio();
-desenhaBarraSuperior();
-desenhaTraco();
-mostra();
-enviado();*/
+
+//desenhaCabeca();
+//desenhaTronco();
+//desenhaBracoDireito();
+//desenhaTraco();
+//desenhaBracoEsquerdo();
+//desenhaPernaDireita();
+//desenhaPernaEsquerda();
 
 
-/*função para exibir conteudo após o click */
-function manipulaConteudo() {
+//função para exibir conteudo após o click 
+/*function manipulaConteudo() {
   var ativos = document.getElementById("iniciarJogo");
   var expirados = document.getElementById("escondeConteudo");
   if(document.getElementById("iniciarJogo").onclick)
@@ -37,39 +41,37 @@ function manipulaConteudo() {
     ativos.style.display = "block";
     expirados.style.display = "none";
   }
-}
+}*/
 
-      /*algoritmo do jogo */
+      //algoritmo do jogo 
 
-let chances = 6; /*tamanho do boneco */
+ //tamanho do boneco 
 let acertos = 0;
-
-let imagem = 0;
 
 let posicao;
 
 for (posicao = 0; posicao < palavra.length; posicao++) {
-    let span = document.createElement("span");  /*cria um span no html */
+    let span = document.createElement("span");  //cria um span no html 
     span.setAttribute('id', posicao);
 
     let div = document.getElementById("palavra");
-    div.appendChild(span);  /*adiciona o span criado na div com id"palavra" */
+    div.appendChild(span);  //adiciona o span criado na div com id"palavra" 
 }
 
 let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-let letras = alfabeto.split("");    /*quebra o array alfabeto em letras */
+let letras = alfabeto.split("");    //quebra o array alfabeto em letras 
 
 for (posicao = 0; posicao < letras.length; posicao++) {
-    let botao = document.createElement("button"); /*variavel que cria um botão*/
-    let letra = document.createTextNode(letras[posicao]); /*cria texto com a letra na posição atual do array*/
-                                   /*letras do alfabeto */ /*posição que ocupa*/
-    botao.appendChild(letra); /* adiciona o texto(letra) ao botão */
-    botao.setAttribute('onclick', 'escolheLetra(\''+letras[posicao]+'\')');
-    /*chama a função */
+    let botao = document.createElement("button"); //variavel que cria um botão
+    let letra = document.createTextNode(letras[posicao]); //cria texto com a letra na posição atual do array
+                                   //letras do alfabeto  posição que ocupa
+    botao.appendChild(letra); // adiciona o texto(letra) ao botão 
+    botao.setAttribute('onclick', 'escolheLetra(\''+letras[posicao]+'\')');     //chama a função 
+
     botao.setAttribute('id', letras[posicao]);
 
     let div = document.getElementById("letras");
-    div.appendChild(botao); /*adiciona o botão na section de id "letras"*/
+    div.appendChild(botao); //adiciona o botão na section de id "letras"
 }
 
 
@@ -93,40 +95,42 @@ function escolheLetra(letra) {
             acertou = true;
         }
     }
-      /*se acertou for falso cria o boneco*/
-    if (acertou === false) {
-        imagem++;
+      //se acertou for falso cria o boneco
+    if (acertou === false |  chances === 5) {
         document.getElementById("forca");
+        desenhaCabeca();
 
         var botao = document.getElementById(letra);
         botao.setAttribute('class', 'errada');
         botao.removeAttribute('onclick');
 
         chances--;
-    }
-    /*se acabarem as chances*/
-    if (chances === 0) {
-        let mensagem = document.createElement("p"); /*cria paragrafo*/
-        let t1 = document.createTextNode("Você perdeu!"); /*exibe mensagem no paragrafo*/
-        mensagem.appendChild(t1); /*adiciona o paragrafo ao HTML*/
-
-        let botao = document.createElement("button"); /*cria um botão*/
-        let t2 = document.createTextNode("jogar novamente"); /*texto do botão*/
         
-        botao.appendChild(t2); /*exibe botão no HTML*/
+    }
+    
+    //se acabarem as chances
+    if (chances === 0) {
+        let mensagem = document.createElement("p"); //cria paragrafo
+        let t1 = document.createTextNode("Você perdeu!"); //exibe mensagem no paragrafo
+        mensagem.appendChild(t1); //adiciona o paragrafo ao HTML
+
+        let botao = document.createElement("button"); //cria um botão
+        let t2 = document.createTextNode("jogar novamente"); //texto do botão
+        
+        botao.appendChild(t2); //exibe botão no HTML
         botao.setAttribute('class', 'novo-bt');
         botao.setAttribute('onclick', 'window.location.reload()');
 
         let div = document.getElementById("novo");
-        div.appendChild(mensagem); /*adiciona na div */
-        div.appendChild(botao); /* ~//~*/
+        div.appendChild(mensagem); //adiciona na div 
+        div.appendChild(botao); // ~//~
     }
       /*se acertou */
-    if (acertos === palavra.length) /*se acertou todas as letras*/ 
+    if (acertos === palavra.length) //se acertou todas as letras
     {
-        let mensagem = document.createElement("p"); /*cria paragrafo */
-        let t1 = document.createTextNode("Você venceu!"); /* cria mensagem*/
-        mensagem.appendChild(t1); /* junta os 2*/
+        let mensagem = document.createElement("p"); //cria paragrafo
+        let t1 = document.createTextNode("Você Venceu. Parabéns!"); // cria mensagem
+        mensagem.appendChild(t1); // junta os 2
 
         let botao = document.createElement("button");
         let t2 = document.createTextNode("jogar novamente");
@@ -136,7 +140,55 @@ function escolheLetra(letra) {
         botao.setAttribute('onclick', 'window.location.reload()');
 
         let div = document.getElementById("novo");
-        div.appendChild(mensagem); /* mensagem no html*/
-        div.appendChild(botao);/*botao no html*/
+        div.appendChild(mensagem); // mensagem no html
+        div.appendChild(botao);//botao no html
     }
 }
+
+//desenhar boneco
+
+function desenhaCabeca() {
+  pincel.arc(150, 150, 30, 0, Math.PI *2);
+  pincel.stroke();
+  
+}
+
+function desenhaTronco() {
+  pincel.beginPath();
+  pincel.moveTo(150,250);
+  pincel.lineTo(150,180);
+  pincel.stroke();
+}
+
+function desenhaBracoDireito() {
+  pincel.beginPath();
+  pincel.moveTo(210,220);
+  pincel.lineTo(150,195);
+  pincel.stroke();
+}
+
+function desenhaBracoEsquerdo() {
+  pincel.beginPath();
+  pincel.moveTo(105,220);
+  pincel.lineTo(150,195);
+  pincel.stroke();
+} 
+
+function desenhaPernaDireita() {
+  pincel.beginPath();
+  pincel.moveTo(210,299);
+  pincel.lineTo(150,250);
+  pincel.stroke();
+}
+
+function desenhaPernaEsquerda() {
+  pincel.beginPath();
+  pincel.moveTo(100,300);
+  pincel.lineTo(150,250);
+  pincel.stroke();
+}
+
+//chamando o boneco
+ for (chaces === 6; chances <=5; chances--){
+   desenhaCabeca();
+ }
