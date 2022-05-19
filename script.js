@@ -14,7 +14,7 @@ let palavras = ["ABACATE", "OVELHA", "TESOURO", "LOGICA", "PANELA", "AFRICA", "F
 let palavra = palavras[Math.floor(Math.random() * palavras.length)]; //SORTEIA A PALAVRA DO ARRAY
 let tela = document.getElementById("forca");
 let pincel = tela.getContext("2d");
-let chances = 6;
+let chances = 7;
 /*const btnEnviar = document.querySelector("#enviar"); btnEnviar.onclick = enviado;*/
 
 
@@ -96,20 +96,27 @@ function escolheLetra(letra) {
         }
     }
       //se acertou for falso cria o boneco
-    if (acertou === false |  chances === 5) {
+    if (acertou === false) {
         document.getElementById("forca");
-        desenhaCabeca();
-
         var botao = document.getElementById(letra);
         botao.setAttribute('class', 'errada');
         botao.removeAttribute('onclick');
+        chances--; 
 
-        chances--;
+        switch(chances){
+          case 1: desenhaCabeca();break;
+          case 2: desenhaTronco(); break;
+          case 3: desenhaBracoEsquerdo();break;
+          case 4: desenhaBracoDireito(); break;
+          case 5: desenhaPernaEsquerda();break;
+          case 6: desenhaPernaDireita(); break;
+
         
+        }
     }
     
     //se acabarem as chances
-    if (chances === 0) {
+    if (chances === 1) {
         let mensagem = document.createElement("p"); //cria paragrafo
         let t1 = document.createTextNode("Você perdeu!"); //exibe mensagem no paragrafo
         mensagem.appendChild(t1); //adiciona o paragrafo ao HTML
@@ -148,6 +155,7 @@ function escolheLetra(letra) {
 //desenhar boneco
 
 function desenhaCabeca() {
+  pincel.beginPath();
   pincel.arc(150, 150, 30, 0, Math.PI *2);
   pincel.stroke();
   
@@ -189,6 +197,3 @@ function desenhaPernaEsquerda() {
 }
 
 //chamando o boneco
- for (chaces === 6; chances <=5; chances--){
-   desenhaCabeca();
- }
