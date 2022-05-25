@@ -21,13 +21,7 @@ const areaTexto = document.querySelector("#novaPalavra").value;
 const btnAdiciona = document.querySelector("#adicionarPalavra"); btnAdiciona.onclick = adicionarPalavras;
 
 
-//desenhaCabeca();
-//desenhaTronco();
-//desenhaBracoDireito();
-//desenhaTraco();
-//desenhaBracoEsquerdo();
-//desenhaPernaDireita();
-//desenhaPernaEsquerda();
+desenhaForca();
 
 
 //função para exibir conteudo após o click 
@@ -203,10 +197,31 @@ function desenhaPernaEsquerda() {
   pincel.stroke();
 }
 
+function desenhaForca() {
+  pincel.fillStyle = 'black'
+  pincel.fillRect(10, 60, 3, 240)
+
+  pincel.fillStyle = 'black'
+  pincel.fillRect(10, 60, 140, 3)
+
+  pincel.fillStyle = 'black'
+  pincel.fillRect(147.5, 60, 3, 52)
+}
+
+
 //adicionar palavra
 
 function adicionarPalavras() {
   let texto = document.querySelector("#novaPalavra").value;
   let novoArray = palavras.push(texto);
   novoArray;
+  if (btnAdiciona.onclick) {
+    alert("palavra adicionada com sucesso");
+    document.querySelector("#novaPalavra").style.display = "none";
+    document.querySelector("#adicionarPalavra").style.display = "none";
+  }
 }
+
+
+//mostrar tracinhos
+
