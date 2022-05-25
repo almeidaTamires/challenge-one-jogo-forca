@@ -14,8 +14,11 @@ let palavras = ["ABACATE", "OVELHA", "TESOURO", "LOGICA", "PANELA", "AFRICA", "F
 let palavra = palavras[Math.floor(Math.random() * palavras.length)]; //SORTEIA A PALAVRA DO ARRAY
 let tela = document.getElementById("forca");
 let pincel = tela.getContext("2d");
-let chances = 7;
-/*const btnEnviar = document.querySelector("#enviar"); btnEnviar.onclick = enviado;*/
+let chances = 6;
+let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+let letras = alfabeto.split("");  //quebra o array alfabeto em letras 
+const areaTexto = document.querySelector("#novaPalavra").value;
+const btnAdiciona = document.querySelector("#adicionarPalavra"); btnAdiciona.onclick = adicionarPalavras;
 
 
 //desenhaCabeca();
@@ -45,7 +48,7 @@ let chances = 7;
 
       //algoritmo do jogo 
 
- //tamanho do boneco 
+
 let acertos = 0;
 
 let posicao;
@@ -58,8 +61,7 @@ for (posicao = 0; posicao < palavra.length; posicao++) {
     div.appendChild(span);  //adiciona o span criado na div com id"palavra" 
 }
 
-let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-let letras = alfabeto.split("");    //quebra o array alfabeto em letras 
+
 
 for (posicao = 0; posicao < letras.length; posicao++) {
     let botao = document.createElement("button"); //variavel que cria um botão
@@ -94,6 +96,7 @@ function escolheLetra(letra) {
             acertos++;
             acertou = true;
         }
+        
     }
       //se acertou for falso cria o boneco
     if (acertou === false) {
@@ -104,22 +107,24 @@ function escolheLetra(letra) {
         chances--; 
 
         switch(chances){
-          case 1: desenhaCabeca();break;
-          case 2: desenhaTronco(); break;
+          case 5: desenhaCabeca();break;
+          case 4: desenhaTronco(); break;
           case 3: desenhaBracoEsquerdo();break;
-          case 4: desenhaBracoDireito(); break;
-          case 5: desenhaPernaEsquerda();break;
-          case 6: desenhaPernaDireita(); break;
+          case 2: desenhaBracoDireito(); break;
+          case 1: desenhaPernaEsquerda();break;
+          case 0: desenhaPernaDireita(); break;
 
         
         }
     }
     
     //se acabarem as chances
-    if (chances === 1) {
+    if (chances === 0) {
         let mensagem = document.createElement("p"); //cria paragrafo
         let t1 = document.createTextNode("Você perdeu!"); //exibe mensagem no paragrafo
+        
         mensagem.appendChild(t1); //adiciona o paragrafo ao HTML
+        mensagem.setAttribute('id', "perdeu");
 
         let botao = document.createElement("button"); //cria um botão
         let t2 = document.createTextNode("jogar novamente"); //texto do botão
@@ -138,6 +143,7 @@ function escolheLetra(letra) {
         let mensagem = document.createElement("p"); //cria paragrafo
         let t1 = document.createTextNode("Você Venceu. Parabéns!"); // cria mensagem
         mensagem.appendChild(t1); // junta os 2
+        mensagem.setAttribute('id', "venceu");
 
         let botao = document.createElement("button");
         let t2 = document.createTextNode("jogar novamente");
@@ -151,6 +157,7 @@ function escolheLetra(letra) {
         div.appendChild(botao);//botao no html
     }
 }
+//mostrando a letra errada
 
 //desenhar boneco
 
@@ -196,4 +203,10 @@ function desenhaPernaEsquerda() {
   pincel.stroke();
 }
 
-//chamando o boneco
+//adicionar palavra
+
+function adicionarPalavras() {
+  let texto = document.querySelector("#novaPalavra").value;
+  let novoArray = palavras.push(texto);
+  novoArray;
+}

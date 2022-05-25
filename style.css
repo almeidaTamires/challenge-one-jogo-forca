@@ -49,3 +49,10 @@ footer p {
     margin-left: 30px;
     
 }
+
+#perdeu {
+    color: red;
+}
+#venceu {
+    color: green;
+}
