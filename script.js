@@ -24,10 +24,11 @@ const btnAdiciona = document.querySelector("#adicionarPalavra"); btnAdiciona.onc
 desenhaForca();
 
 
+
 //função para exibir conteudo após o click 
-/*function manipulaConteudo() {
+function manipulaConteudo() {
   var ativos = document.getElementById("iniciarJogo");
-  var expirados = document.getElementById("escondeConteudo");
+  var expirados = document.querySelector(".escondeConteudo");
   if(document.getElementById("iniciarJogo").onclick)
   {
     expirados.style.display = "block";
@@ -38,7 +39,7 @@ desenhaForca();
     ativos.style.display = "block";
     expirados.style.display = "none";
   }
-}*/
+}
 
       //algoritmo do jogo 
 
@@ -124,7 +125,7 @@ function escolheLetra(letra) {
         let t2 = document.createTextNode("jogar novamente"); //texto do botão
         
         botao.appendChild(t2); //exibe botão no HTML
-        botao.setAttribute('class', 'novo-bt');
+        botao.setAttribute('class', 'novo-bt'); //adiciona a classe ao
         botao.setAttribute('onclick', 'window.location.reload()');
 
         let div = document.getElementById("novo");
@@ -151,12 +152,14 @@ function escolheLetra(letra) {
         div.appendChild(botao);//botao no html
     }
 }
-//mostrando a letra errada
+
 
 //desenhar boneco
 
 function desenhaCabeca() {
   pincel.beginPath();
+  pincel.strokeStyle = "turquoise";
+  pincel.lineWidth = "3";
   pincel.arc(150, 150, 30, 0, Math.PI *2);
   pincel.stroke();
   
@@ -164,6 +167,9 @@ function desenhaCabeca() {
 
 function desenhaTronco() {
   pincel.beginPath();
+  pincel.strokeStyle = "turquoise";
+  pincel.lineWidth = "3";
+  pincel.lineCap = "round";
   pincel.moveTo(150,250);
   pincel.lineTo(150,180);
   pincel.stroke();
@@ -171,6 +177,9 @@ function desenhaTronco() {
 
 function desenhaBracoDireito() {
   pincel.beginPath();
+  pincel.strokeStyle = "turquoise";
+  pincel.lineWidth = "3";
+  pincel.lineCap = "round";
   pincel.moveTo(210,220);
   pincel.lineTo(150,195);
   pincel.stroke();
@@ -178,6 +187,9 @@ function desenhaBracoDireito() {
 
 function desenhaBracoEsquerdo() {
   pincel.beginPath();
+  pincel.strokeStyle = "turquoise";
+  pincel.lineWidth = "3";
+  pincel.lineCap = "round";
   pincel.moveTo(105,220);
   pincel.lineTo(150,195);
   pincel.stroke();
@@ -185,13 +197,20 @@ function desenhaBracoEsquerdo() {
 
 function desenhaPernaDireita() {
   pincel.beginPath();
+  pincel.strokeStyle = "turquoise";
+  pincel.lineWidth = "3";
+  pincel.lineCap = "round";
   pincel.moveTo(210,299);
   pincel.lineTo(150,250);
   pincel.stroke();
 }
 
 function desenhaPernaEsquerda() {
+
   pincel.beginPath();
+  pincel.strokeStyle = "turquoise";
+  pincel.lineWidth = "3";
+  pincel.lineCap = "round";
   pincel.moveTo(100,300);
   pincel.lineTo(150,250);
   pincel.stroke();
@@ -207,8 +226,7 @@ function desenhaForca() {
   pincel.fillStyle = 'black'
   pincel.fillRect(147.5, 60, 3, 52)
 }
-
-
+ 
 //adicionar palavra
 
 function adicionarPalavras() {
@@ -223,5 +241,4 @@ function adicionarPalavras() {
 }
 
 
-//mostrar tracinhos
-
+//mostrar letra errada

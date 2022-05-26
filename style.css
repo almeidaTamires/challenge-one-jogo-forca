@@ -3,56 +3,278 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(img/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*menu de navegação*/
+ul {
+    text-decoration: none;
+      display: flex;
+      padding: 5px;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+  textarea {
+      width: 200px;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+      text-align: center;
+      border: 2px solid #8707ff;
+      border-radius: 10px;
+      background: rgba(0,0,0,.10);
+  }
+  .flexItem {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 5px 30px;
+    text-align: center;
+  }
+  .links {
+    display: flex;
+    flex-direction: rows;
+    margin: 5px;
+    text-decoration: none;
+    font-family: 'Raleway';
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    color: #000000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .links:hover {
+    font-size:25px;
+    transition:0.5;
+  }  
+button {
+    background-color: rgba(0,0,0,.10);
+    color: white;
 }
 
 /*h1 e h2*/
+ #jogoForca {
+    font-size: 2rem;
+    font-weight: 400;
+}
+#digite {
+    font-size: 1rem;
+    font-weight: 200;
+    text-align: center;
+    margin: 0 60px;
+}
+
 #jogoForca, #digite{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 5px;
+    padding: 10px;
+    font-family: 'Raleway';
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    color: #000000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+
+
 .hs {
-    padding: 20px;
+    margin: 15px;
+
 }
 
 .container {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10PX;
 }
 /*canvas*/
-#canvas {
+.flex-container-2 {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    padding: 10px;
+    text-align: center;
+    flex-direction: column;
+}
+#forca {
+    display: flex;
+    background:rgba(0,0,0,.1);
+    box-shadow:
+    10.7px 6.7px 5.3px rgba(0, 0, 0, 0.077),
+    36px 22.3px 17.9px rgba(0, 0, 0, 0.113),
+    161px 100px 80px rgba(0, 0, 0, 0.19);    
 }
 
-/*teclado*/
-.teclado-container {
-    padding: 5px;
-    
+/*palavras*/
+#palavras, .flex-container-2-2 {
+    margin: 30px;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    text-align: center;
+    color: turquoise;
+    font-weight: 400;
+    letter-spacing: 5px;
+
 }
-/*css do footer*/
-footer {
+
+#forca {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+
+}
+
+#letras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-left: 200px;
+}
+
+
+
+/*mensagem venceu e perdeu*/
+#perdeu {
+    color: red;
+    font-size: 2rem;
+    padding: 5px;
+    margin: 5px;
+}
+#venceu {
+    color: green;
+}
+
+/*botões */
+.containerBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+.flex-container-3 button {
+    padding: 10px;
+    margin: 3px;
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    color: #000000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Raleway';
+    font-weight: 700;
+    border: 1px solid #EFD612;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow:
+    10.7px 6.7px 5.3px rgba(0, 0, 0, 0.077),
+    36px 22.3px 17.9px rgba(0, 0, 0, 0.113),
+    161px 100px 80px rgba(0, 0, 0, 0.19); 
+   
+}
+.novo-bt {
+    padding: 10px;
+    color: #ebd143;
+    border: 2px solid #8707ff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+
+        
+}
+#adicionarPalavra{
+    padding: 10px;
+    margin: 10px;
+    color: #ebd143;
+    border: 2px solid #8707ff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+#iniciarJogo {
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
+    margin: 100px 0;
+    color: #ddeb43;
+    border: 2px solid #8707ff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#adicionarPalavra:hover, #iniciarJogo:hover, .novo-bt:hover {
+    box-shadow: 2px 2px 15px #8707ff inset;
+}
+#adicionarPalavra:active, #iniciarJogo:active, .novo-bt:active {
+    box-shadow: 2px 2px 20px #8707ff inset;
+  }
+
+  /*css do footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     bottom: 0;
+
 }
 footer p {
     align-items: center;
     justify-content: center;
-    padding-bottom: 40px;
+    padding: 40px;
     margin-left: 30px;
+    
+    
+}
+/*responsividade*/
+
+@media only screen and (max-width: 600px){
+    #forca {
+        display: flex;
+        width: 75%;
+        height: auto;
+        margin: 0 50px;
+        padding: 10px;
+    }
     
 }
 
-#perdeu {
-    color: red;
+@media only screen and (max-width: 600px){
+    .flex-container-3 button {
+        display: flex;
+        flex-wrap: wrap;
+        width: 15%;
+        height: auto;
+        align-items: center;
+    }
+
 }
-#venceu {
-    color: green;
+
+@media only screen and (max-width: 600px){
+#letras {
+    text-align: center;
+    align-items: center;
+    margin-left: 55px;
+}
 }
