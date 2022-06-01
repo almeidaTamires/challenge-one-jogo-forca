@@ -2,6 +2,8 @@
     font-family: 'Raleway' , sans-serif;
     font-weight: 700;
 } 
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -13,14 +15,50 @@ body {
     background-position:center;
     
 }
-/*menu de navegação*/
+/*menu de naveação*/
+header {
+    display: flex;
+    width: 100%;
+    
+}
+nav {
+    display: flex;
+    justify-content: center;
+    
+} 
 ul {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.border {
+    border-bottom: 1px solid black;    
+}
+.flexItem {
+     display: flex;
+     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.links {
+    display: flex;
+    justify-content: space-around;
+    margin:30px 0 0 0;
     text-decoration: none;
-      display: flex;
-      padding: 5px;
-      flex-direction: row;
-      flex-wrap: wrap;
-  }
+    font-family: 'Raleway';
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    color: #000000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+ }
+  .links:hover {
+    font-size:25px;
+    transition:0.5;
+}  
+
+
   textarea {
       width: 200px;
       align-items: center;
@@ -31,29 +69,8 @@ ul {
       border-radius: 10px;
       background: rgba(0,0,0,.10);
   }
-  .flexItem {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    margin: 5px 30px;
-    text-align: center;
-  }
-  .links {
-    display: flex;
-    flex-direction: rows;
-    margin: 5px;
-    text-decoration: none;
-    font-family: 'Raleway';
-    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
-    color: #000000;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .links:hover {
-    font-size:25px;
-    transition:0.5;
-  }  
+ 
+ 
 button {
     background-color: rgba(0,0,0,.10);
     color: white;
@@ -98,6 +115,7 @@ button {
     justify-content: center;
     align-items: center;
     margin: 10PX;
+    
 }
 /*canvas*/
 .flex-container-2 {
@@ -108,6 +126,8 @@ button {
     padding: 10px;
     text-align: center;
     flex-direction: column;
+    height: 65vh;
+    width: 90%;
 }
 #forca {
     display: flex;
@@ -115,27 +135,24 @@ button {
     box-shadow:
     10.7px 6.7px 5.3px rgba(0, 0, 0, 0.077),
     36px 22.3px 17.9px rgba(0, 0, 0, 0.113),
-    161px 100px 80px rgba(0, 0, 0, 0.19);    
+    161px 100px 80px rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    margin: 15px;    
 }
 
 /*palavras*/
 #palavras, .flex-container-2-2 {
-    margin: 30px;
+    margin: 10px;
     font-family: 'Raleway';
     font-size: 1.5rem;
     text-align: center;
-    color: #ddeb43;
+    color: #ca0a0a;
     font-weight: 400;
     letter-spacing: 5px;
 
 }
 
-#forca {
-    display: flex;
-    align-items: center;
-    margin: 15px;
-
-}
 
 #letras {
     display: flex;
@@ -143,7 +160,6 @@ button {
     align-items: center;
     flex-wrap: wrap;
     width: 60%;
-    margin-left: 200px;
 }
 
 
@@ -161,12 +177,11 @@ button {
 
 /*botões */
 .containerBtn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        align-content: center
 }
 .flex-container-3 button {
     padding: 10px;
@@ -264,10 +279,18 @@ footer p {
         margin: 0 50px;
         padding: 10px;
     }
+    .escondeConteudo {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: stretch;
     
-}
-
-@media only screen and (max-width: 600px){
+    }
+    .flex-container-2 {
+        margin: 25px;
+    }
     .flex-container-3 button {
         display: flex;
         flex-wrap: wrap;
@@ -275,13 +298,22 @@ footer p {
         height: auto;
         align-items: center;
     }
-
+    #letras {
+        text-align: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+    
 }
 
-@media only screen and (max-width: 600px){
-#letras {
-    text-align: center;
-    align-items: center;
-    margin-left: 55px;
-}
+@media only screen and (max-width: 768px){
+    button {
+        font-size: 20px;
+    }
+    .containerBtn {
+        margin-top: 95px;
+    }
+    #forca {
+        margin-top: 40px;
+    }
 }
