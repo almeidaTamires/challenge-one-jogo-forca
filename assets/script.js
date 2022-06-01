@@ -30,6 +30,7 @@ desenhaForca();
 function manipulaConteudo() {
   var ativos = document.getElementById("iniciarJogo");
   var expirados = document.querySelector(".escondeConteudo");
+  var esconde = document.querySelector(".esconde");
   if(document.getElementById("iniciarJogo").onclick)
   {
     expirados.style.display = "block";
@@ -38,6 +39,7 @@ function manipulaConteudo() {
   else
   {
     ativos.style.display = "block";
+    
     expirados.style.display = "none";
   }
 }
