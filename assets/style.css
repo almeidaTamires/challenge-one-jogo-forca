@@ -177,11 +177,13 @@ button {
 
 /*botões */
 .containerBtn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-        align-content: center
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
 }
 .flex-container-3 button {
     padding: 10px;
@@ -228,13 +230,12 @@ button {
 }
 
 #iniciarJogo {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
-    margin:-85px;
+    margin:-45px;
     color: #8707ff;
     border: 2px solid #8707ff;
     border-radius: 10px;
@@ -256,7 +257,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
     margin-top: 15px;
     bottom: 0;
 
