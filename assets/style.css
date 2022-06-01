@@ -185,7 +185,8 @@ button {
 }
 .flex-container-3 button {
     padding: 10px;
-    margin: 3px;
+    width: 100%;
+    margin: 10px;
     background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
     color: #000000;
     background-clip: text;
@@ -233,7 +234,7 @@ button {
     justify-content: center;
     align-items: center;
     position: fixed;
-    margin: 100px 0;
+    margin:-85px;
     color: #8707ff;
     border: 2px solid #8707ff;
     border-radius: 10px;
