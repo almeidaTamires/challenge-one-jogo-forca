@@ -25,6 +25,7 @@ desenhaForca();
 
 
 
+
 //função para exibir conteudo após o click 
 function manipulaConteudo() {
   var ativos = document.getElementById("iniciarJogo");
@@ -51,9 +52,11 @@ let posicao;
 for (posicao = 0; posicao < palavra.length; posicao++) {
     let span = document.createElement("span");  //cria um span no html 
     span.setAttribute('id', posicao);
+    
 
     let div = document.getElementById("palavra");
     div.appendChild(span);  //adiciona o span criado na div com id"palavra" 
+
 }
 
 
@@ -80,7 +83,8 @@ function escolheLetra(letra) {
         if (letra === palavra[posicao])/*se a letra for encontrada em alguma posição da palavra */ 
         {
             let span = document.getElementById(posicao);
-            let l = document.createTextNode(letra); /*cria um texto com o conteudo da letra*/
+            let l = document.createTextNode(letra);/*cria um texto com o conteudo da letra*/
+            
 
             span.appendChild(l); /*cria um span com o texto de "letra" */
 
@@ -230,7 +234,7 @@ function desenhaForca() {
 //adicionar palavra
 
 function adicionarPalavras() {
-  let texto = document.querySelector("#novaPalavra").value;
+  let texto = document.querySelector("#novaPalavra").value.toUpperCase(); //texto digitado é passado para o array em letras maiúsculas
   let novoArray = palavras.push(texto);
   novoArray;
   if (btnAdiciona.onclick) {
@@ -239,6 +243,3 @@ function adicionarPalavras() {
     document.querySelector("#adicionarPalavra").style.display = "none";
   }
 }
-
-
-//mostrar letra errada

@@ -1,3 +1,7 @@
+*{
+    font-family: 'Raleway' , sans-serif;
+    font-weight: 700;
+} 
 body {
     display: flex;
     flex-direction: column;
@@ -6,7 +10,8 @@ body {
     background-image: url(img/fundo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position:center;
+    
 }
 /*menu de navegação*/
 ul {
@@ -119,7 +124,7 @@ button {
     font-family: 'Raleway';
     font-size: 1.5rem;
     text-align: center;
-    color: turquoise;
+    color: #ddeb43;
     font-weight: 400;
     letter-spacing: 5px;
 
@@ -184,7 +189,7 @@ button {
 }
 .novo-bt {
     padding: 10px;
-    color: #ebd143;
+    color: #8707ff;
     border: 2px solid #8707ff;
     border-radius: 10px;
     padding: 10px 25px;
@@ -197,7 +202,7 @@ button {
 #adicionarPalavra{
     padding: 10px;
     margin: 10px;
-    color: #ebd143;
+    color: #8707ff;
     border: 2px solid #8707ff;
     border-radius: 10px;
     padding: 10px 25px;
@@ -214,7 +219,7 @@ button {
     align-items: center;
     position: fixed;
     margin: 100px 0;
-    color: #ddeb43;
+    color: #8707ff;
     border: 2px solid #8707ff;
     border-radius: 10px;
     padding: 10px 25px;
@@ -236,6 +241,7 @@ footer {
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: 15px;
     bottom: 0;
 
 }
@@ -243,7 +249,8 @@ footer p {
     align-items: center;
     justify-content: center;
     padding: 40px;
-    margin-left: 30px;
+    margin: 30px;
+    color: #ddeb43;
     
     
 }
