@@ -17,13 +17,12 @@ let pincel = tela.getContext("2d");
 let chances = 6;
 let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 let letras = alfabeto.split("");  //quebra o array alfabeto em letras 
+let letrasErradas = [];
 const areaTexto = document.querySelector("#novaPalavra").value;
 const btnAdiciona = document.querySelector("#adicionarPalavra"); btnAdiciona.onclick = adicionarPalavras;
-
+const erro = document.querySelector(".erradas");
 
 desenhaForca();
-
-
 
 
 //função para exibir conteudo após o click 
@@ -57,6 +56,7 @@ let posicao;
 for (posicao = 0; posicao < palavra.length; posicao++) {
     let span = document.createElement("span");  //cria um span no html 
     span.setAttribute('id', posicao);
+    span.setAttribute("class", "borderBottom")
     
 
     let div = document.getElementById("palavra");
@@ -100,15 +100,16 @@ function escolheLetra(letra) {
             acertos++;
             acertou = true;
         }
-        
     }
       //se acertou for falso cria o boneco
     if (acertou === false) {
+
         document.getElementById("forca");
         var botao = document.getElementById(letra);
         botao.setAttribute('class', 'errada');
         botao.removeAttribute('onclick');
         chances--; 
+        
 
         switch(chances){
           case 5: desenhaCabeca();break;
@@ -117,10 +118,12 @@ function escolheLetra(letra) {
           case 2: desenhaBracoDireito(); break;
           case 1: desenhaPernaEsquerda();break;
           case 0: desenhaPernaDireita(); break;
-
-        
         }
-    }
+        if (!(letrasErradas.includes(letra))){
+          letrasErradas.push(letra);
+      }
+      letrasErradas();
+      }
     
     //se acabarem as chances
     if (chances === 0) {
@@ -246,5 +249,12 @@ function adicionarPalavras() {
     alert("palavra adicionada com sucesso");
     document.querySelector("#novaPalavra").style.display = "none";
     document.querySelector("#adicionarPalavra").style.display = "none";
+  }
+}
+ //mostra palavra errada 
+ function letrasErradas(){
+  erro.innerHTML = " ";
+  for(var i = 0; i<letrasErradas.length;i++){
+      erro.innerHTML += letrasErradas[i].toUpperCase() + " ";
   }
 }
