@@ -31,15 +31,18 @@ function manipulaConteudo() {
   var ativos = document.getElementById("iniciarJogo");
   var expirados = document.querySelector(".escondeConteudo");
   var esconde = document.querySelector(".esconde");
+
   if(document.getElementById("iniciarJogo").onclick)
   {
     expirados.style.display = "block";
     ativos.style.display = "none";
+    esconde.style.display = "none"
+    
   }
   else
   {
     ativos.style.display = "block";
-    
+    esconde.style.display = "block"
     expirados.style.display = "none";
   }
 }
