@@ -122,8 +122,8 @@ function escolheLetra(letra) {
         if (!(letrasErradas.includes(letra))){
           letrasErradas.push(letra);
       }
-      letrasErradas();
-      }
+      mostraErro();
+    }
     
     //se acabarem as chances
     if (chances === 0) {
@@ -252,7 +252,7 @@ function adicionarPalavras() {
   }
 }
  //mostra palavra errada 
- function letrasErradas(){
+ function mostraErro(){
   erro.innerHTML = " ";
   for(var i = 0; i<letrasErradas.length;i++){
       erro.innerHTML += letrasErradas[i].toUpperCase() + " ";
